@@ -1,38 +1,54 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace VariablesCS
+namespace PracticeHere
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-      //practice creating variables
-      string numberOfCupsOfCoffee = "2";
-      string fullName = "Eddy Huapaya";
-      var today = DateTime.Now; 
-      Console.WriteLine(" My name is " + fullName + " And usually today at this time " + today + " I drink about " + numberOfCupsOfCoffee + " cups of coffee ");
+        static void Main(string[] args)
+        {
+            Console.Write($"Bonjour, How many cups of coffee do you drink everyday?: ");
+            double numberOfCupsOfCoffee = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine();
+            Console.WriteLine(
+                $"Awesome, thank you for telling me that you drink {numberOfCupsOfCoffee} cups of coffee!!!"
+            );
+            Console.WriteLine();
+            Console.Write($"Now, may I have your name?");
+            var fullName = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine(
+                $"Awesome, what a beautiful name that is {fullName}! It has a ring to it. "
+            );
+            var today = DateTime.Now;
+            Console.WriteLine();
 
-      //practice getting input from user 
-      Console.WriteLine("What is your name?");
-      string userName = Console.ReadLine();
-      string greeting = "Bonjour, how are you " + userName + " ?";
-      Console.WriteLine(greeting);
-      
-      //practice getting different types of input from user
-      Console.WriteLine("What is your favorite lucky number?");
-      string firstNumberAsString = Console.ReadLine();
-      Console.WriteLine("Cool, Thanks what is your second favorite lucky number?");
-      string secondNumberAsString = Console.ReadLine();
-      Console.WriteLine("Thank you " + userName + " we appreciate it");
+            Console.WriteLine(
+                $"So {fullName} thank you for answering a few questions on {today}. It is amazing to know that you drink {numberOfCupsOfCoffee} cups of coffee!"
+            );
+            Console.WriteLine();
+            Console.WriteLine();
 
-      //Converting String Input Into Numbers
-      var firstOperand = double.Parse(firstNumberAsString);
-      var secondOperand = double.Parse(secondNumberAsString);
-      var sum = firstOperand + secondOperand;
-      Console.WriteLine("Great we added your favorite lucky numbers " + sum);
+            Console.WriteLine("Now let's see how many cups of liquid you drink per day.");
+            Console.Write($"How many cups of water do you drink per day?: ");
+            double userCupsOfWater = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine();
+            Console.WriteLine(
+                $"You drink {numberOfCupsOfCoffee} cups of coffee and {userCupsOfWater} cups of water."
+            );
+            var sum = numberOfCupsOfCoffee + userCupsOfWater;
+            var quotient = numberOfCupsOfCoffee % userCupsOfWater;
+            var product = numberOfCupsOfCoffee * userCupsOfWater;
 
+            Console.WriteLine();
 
-    
-          }
-  }
+            Console.WriteLine($"in total you drink {sum} amounts of liquid per day!");
+            Console.WriteLine(
+                $"Or if you want to divide the liquids, you've drank {quotient} of liquids divided"
+            );
+            Console.WriteLine(
+                $"But if you want to get the multiplication of your liquid consumption it would be {product}"
+            );
+        }
+    }
 }
